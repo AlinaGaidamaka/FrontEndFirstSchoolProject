@@ -1,0 +1,83 @@
+/* Custom styling for Front End Project - Shopping list */
+
+/* Styling for main sections */
+
+body {
+    --main-light-background-color: #F0FCF4;
+}
+
+.container-fluid {
+    background: url("http://myy.haaga-helia.fi/~a1603207/farmers-market-1329008.jpg") repeat;
+}
+
+#content {
+    font-family: 'Raleway', sans-serif;
+    background-color: var(--main-light-background-color);
+    height: 90%;
+    width: 90%;
+    position: relative;
+    left: 5%;
+    top: 5%;
+    padding: 15px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#header {
+    text-align: center;
+    background-color: green;
+    color: var(--main-light-background-color);
+    font-variant: small-caps;
+    margin-top: -15px;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+#shoppingColumn, #newItem {
+border-bottom: 4px solid #E4E9EB;   
+padding-bottom: 20px;
+}
+
+#footer {
+    color: var(--main-light-background-color);
+    padding-top: 20px;  
+    text-align: right;
+}
+
+/* Styling for category buttons */
+
+.categoryButton {
+    width: 100%;
+    height: 5rem;
+}
+
+.categoryImg {
+    height: 20px;
+}
+
+#searchInput {
+    width: 60%;
+    height: 35px;
+    border-radius: 5px;
+}
+
+/* Styling for classes, which are added through js: */
+
+.classCategoties{
+    display:none;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+.checked td {
+  text-decoration: line-through;
+}
+
+.categoryImageList{
+    height: 25px;
+}

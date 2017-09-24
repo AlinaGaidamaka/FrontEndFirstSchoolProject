@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8" />
+    <title>Shopping List</title>
+    <meta name="author" content="Alina Gaidamaka" />
+    <meta name="description" content="The best online shopping list application at the market" />
+    <meta name="keywords" content="shopping, list, grocery, groceries" />
+    
+    <!-- This will set the width of the page to follow the screen-width of the device (which will vary depending on the device: -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- Bootstrap requires three files to work: 1) css stylesheet, 2) jquery scripts, 3) javascript. Links to CDN below -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+    
+    <!-- our own custom css: -->
+    <link href="FrontEndProjectStyleSheet.css" rel="stylesheet" />
+    
+    <!-- Adding also a fancy Google font: -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:700" rel="stylesheet">
+    
+</head>
+    
+<body>
+
+<div class="container-fluid">
+   <div id="content"> 
+        <div class="row">
+            
+            <!-- The header always spans for the full width of the device screen -->
+            <div id="header" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <h1>Shopping list</h1>
+            </div>
+            
+            <!-- This is the structure for the columns on the left side: Shopping list and adding a new item. These take 2/3 of the screen width on larger screens and the full width on smaller ones -->
+            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                <div id="shoppingColumn">
+                    <h2>Your shopping list:</h2>  
+                    <table id="shoppingList" class="shoppingListClass"></table>
+                    <h2>Checked Items:</h2>
+                    <table id="checkedShoppingList" class="checked"></table>
+                    <button onclick="emptyList()" class="btn btn-danger"><span class="glyphicon glyphicon-remove-sign"></span> Empty my list</button>
+                </div>
+                
+                
+                <div id="newItem">
+                    <h2>Add new item</h2>
+                    <div class="form-group">
+                        <label for="product">Product:</label>
+                        <input type="text" id="product" value="" class="form-control" data-toggle="tooltip" title="Fill in the product name"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" id="quantity" value="" class="form-control" data-toggle="tooltip" title="Enter quantity (positive numbers only)" />
+                    </div>
+                    <div class="form-group">
+                        <label for="qtype">Quantity type:</label>
+                        <input type="text" id="type" value="" class="form-control" data-toggle="tooltip" title="Fill in quantity type: pcs, kg or liters" />
+                    </div>
+                    <button onclick="addItemToShoppingList()" class="btn btn-success"><span class="glyphicon glyphicon-plus-sign"></span> Add product</button>
+                </div>
+            </div>
+            
+            <!-- This is the structure for the column on the right side: Category buttons. These take 1/3 of the screen width on larger screens and the full width on smaller ones -->
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <h2>Choose existing product from categories:</h2>
+                <span><input type="text" id="searchInput" data-toggle="tooltip" title="Type the product name" /><button onclick="searchCategoriesItem()" class="btn btn-success"><span class="glyphicon glyphicon-search"></span> Search</button></span>
+                <div id="searchDiv"></div>
+                <p></p>
+
+                <div id="categories">
+                    <button class="categoryButton btn btn-default">
+                        <img class="categoryImg" src=http://myy.haaga-helia.fi/~a1603207/Category_icons/dairy.png alt="Dairy"/> Dairy
+                    </button>
+                    <div id="daily" class="classCategoties"></div>
+                    <button class="categoryButton btn btn-default">
+                        <img class="categoryImg" src=http://myy.haaga-helia.fi/~a1603207/Category_icons/fruit_vegetables.png alt="Fruit" /> Fruit and vegetables
+                    </button>
+                    <div id="fruitVegetable" class="classCategoties"></div>
+                    <button class="categoryButton btn btn-default">
+                        <img class="categoryImg" src=http://myy.haaga-helia.fi/~a1603207/Category_icons/meat.png alt="Meat" /> Meat
+                    </button>
+                    <div id="meat" class="classCategoties"></div>
+                    <button class="categoryButton btn btn-default">
+                        <img class="categoryImg" src=http://myy.haaga-helia.fi/~a1603207/Category_icons/seafood.png alt="Seafood" /> Seafood
+                    </button>
+                    <div id="seafood" class="classCategoties"></div>
+                    <button class="categoryButton btn btn-default">
+                        <img class="categoryImg" src=http://myy.haaga-helia.fi/~a1603207/Category_icons/household.png alt="Household" /> Household &amp; cleaning
+                    </button>
+                    <div id="house" class="classCategoties">Household &amp; cleaning </div>
+                    <button class="categoryButton btn btn-default">
+                        <img class="categoryImg" src=http://myy.haaga-helia.fi/~a1603207/Category_icons/breakfast.png alt="Breakfast" /> Breakfast &amp; cereal
+                    </button>
+                    <div id="breakfast" class="classCategoties">Breakfast &amp; cereal </div>
+                    <button class="categoryButton btn btn-default">
+                        <img class="categoryImg" src=http://myy.haaga-helia.fi/~a1603207/Category_icons/bakery.png alt="Bakery" /> Bakery
+                    </button>
+                    <div id="bakery" class="classCategoties"></div>
+                    <button class="categoryButton btn btn-default">
+                        <img class="categoryImg" src=http://myy.haaga-helia.fi/~a1603207/Category_icons/frozen.png alt="Frozen food" /> Frozen food
+                    </button>
+                    <div id="frozen" class="classCategoties"></div>
+                    <button class="categoryButton btn btn-default">
+                        <img class="categoryImg" src=http://myy.haaga-helia.fi/~a1603207/Category_icons/snacks.png alt="Snacks" /> Snacks
+                    </button>
+                    <div id="snacks" class="classCategoties"></div>
+                    <button class="categoryButton btn btn-default">
+                        <img class="categoryImg" src=http://myy.haaga-helia.fi/~a1603207/Category_icons/beverages.png alt="Beverages" /> Beverages
+                    </button>
+                    <div id="beverages" class="classCategoties"></div>
+                    <button class="categoryButton btn btn-default">
+                        <img class="categoryImg" src=http://myy.haaga-helia.fi/~a1603207/Category_icons/pasta_rice.png alt="Pasta and rice" /> Pasta &amp; rice
+                    </button>
+                    <div id="pasta" class="classCategoties"></div>
+                </div>
+            </div>
+        </div>
+       
+       <!-- This is the footer section, which takes the full width the same way as the header -->
+        <div id="footer" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+           <p>&copy; Alina Gaidamaka, Tiina Lehto 2017</p>
+        </div>
+       
+    </div>
+</div>
+
+<script src="FrontEndProjectJavaScript.js"></script>
+
+</body>
+</html>

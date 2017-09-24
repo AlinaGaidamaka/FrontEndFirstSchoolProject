@@ -1,0 +1,15 @@
+[{"imageFileName":"img001.PNG","product":"MILK","category":"Daily","quantity":1,"type":"l"}
+,{"imageFileName":"img002.PNG","product":"APPLE","category":"Fruit & vegetable","quantity":1,"type":"pcs"}
+,{"imageFileName":"img003.PNG","product":"HAM","category":"Meat","quantity":1,"type":"g"}
+,{"imageFileName":"img004.PNG","product":"SALMON","category":"Seafood","quantity":1,"type":"g"}
+,{"imageFileName":"img005.PNG","product":"TOILET PAPER","category":"Household & cleaning","quantity":1,"type":"pcs"}
+,{"imageFileName":"img006.PNG","product":"CORN FLAKES","category":"Breakfast & cereal","quantity":1,"type":"pcs"}
+,{"imageFileName":"img007.PNG","product":"BREAD","category":"Bakery","quantity":1,"type":"pcs"}
+,{"imageFileName":"img008.PNG","product":"CHIPS","category":"Frozen food","quantity":1,"type":"pcs"}
+,{"imageFileName":"img009.PNG","product":"CRISPS","category":"Snacks Crisps","quantity":1,"type":"pcs"}
+,{"imageFileName":"img010.PNG","product":"SODA","category":"Beverages Soda","quantity":1,"type":"pcs"}
+,{"imageFileName":"img011.PNG","product":"SPAGHETTI","category":"Pasta & rice","quantity":1,"type":"pcs"}
+,{"imageFileName":"img012.PNG","product":"BANANA","category":"Fruit & vegetable","quantity":1,"type":"kg"}
+,{"imageFileName":"img013.PNG","product":"CARROT","category":"Fruit & vegetable","quantity":1,"type":"kg"}
+,{"imageFileName":"img014.PNG","product":"CHERRY","category":"Fruit & vegetable","quantity":1,"type":"kg"}
+]
